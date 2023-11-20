@@ -105,6 +105,10 @@
                 border-bottom: 1px dashed black;
             }
 
+            .ckyc__empty.small {
+                min-width: 2rem !important;
+            }
+
             .cells {
                 display: grid;
                 padding: 0px !important;
@@ -149,6 +153,60 @@
                 border: 1px solid black !important;
                 height: 20px;
                 width: 20px;
+            }
+
+            .map {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 15rem;
+            }
+
+            .map .map__title {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+
+            .map__pointer {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+
+            .map__footer {
+                position: absolute;
+                bottom: 0px;
+            }
+
+            .info__container {
+                width: 80%;
+                margin-inline: auto;
+                margin-top: 3rem;
+            }
+
+            .custom__table {
+                width: 100%;
+            }
+
+            .custom__table tr {
+                border: 1px solid black;
+            }
+
+            .custom__table td {
+                padding: 0.2rem !important;
+            }
+
+            .stamp_wrapper {
+                text-align: center;
+            }
+
+            .stamp__box {
+                border: 1px solid black;
+                display: block;
+                height: 7rem;
+                margin-inline: 1rem;
             }
         </style>
     </head>
@@ -419,13 +477,17 @@
 
                                 <p class="ckyc__p">Registration No.:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.registrationNo}}</p>
+                            </td>
                             <td class="ckyc__td" width="20%">
                                 <p class="ckyc__p">दर्ता मिति:</p>
 
                                 <p class="ckyc__p">Registration Date:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.registrationDate}}</p>
+                            </td>
                         </tr>
 
                         <!-- PAN No + VAT Registration No. -->
@@ -435,7 +497,9 @@
 
                                 <p class="ckyc__p">PAN No.:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.panNo}}</p>
+                            </td>
                             <td class="ckyc__td" width="20%">
                                 <p class="ckyc__p">
                                     मूल्यअभिबृिद्धि कर दर्ता नं.:
@@ -443,7 +507,11 @@
 
                                 <p class="ckyc__p">VAT Registration No.:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">
+                                    {{body.vatRegistrationNo}}
+                                </p>
+                            </td>
                         </tr>
                         <!-- Subsidiary Company -->
                         <tr class="ckyc__tr">
@@ -458,6 +526,9 @@
                                     Subsidiary Company:
                                 </p>
                             </td>
+                            <td class="ckyc__td" width="60%" colspan="2">
+                                <p class="ckyc__p">{{body.subsidiaryName}}</p>
+                            </td>
                         </tr>
                         <!-- Nature of Business + Area of Work -->
                         <tr class="ckyc__tr">
@@ -466,13 +537,17 @@
 
                                 <p class="ckyc__p">Nature of Business:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.natureOfBusiness}}</p>
+                            </td>
                             <td class="ckyc__td" width="20%">
                                 <p class="ckyc__p">कार्य क्षेत्र:</p>
 
                                 <p class="ckyc__p">Area of Work:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.areaOfWork}}</p>
+                            </td>
                         </tr>
 
                         <!-- Listed or Not + Listing Date -->
@@ -484,13 +559,17 @@
 
                                 <p class="ckyc__p">Listed or Not:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.listedOrNot}}</p>
+                            </td>
                             <td class="ckyc__td" width="20%">
                                 <p class="ckyc__p">सूचिकरण मिति:</p>
 
                                 <p class="ckyc__p">Listing Date:</p>
                             </td>
-                            <td class="ckyc__td" width="30%"></td>
+                            <td class="ckyc__td" width="30%">
+                                <p class="ckyc__p">{{body.listingDate}}</p>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -535,7 +614,9 @@
 
                                 <p class="ckyc__p">Bank Account Number:</p>
                             </td>
-                            <td class="ckyc__td" width="80%"></td>
+                            <td class="ckyc__td" width="80%">
+                                <p class="ckyc__p">{{body.bankAccountNo}}</p>
+                            </td>
                         </tr>
                         <!-- Name and Address of Bank -->
                         <tr class="ckyc__tr">
@@ -546,7 +627,9 @@
 
                                 <p class="ckyc__p">Name & Address of Bank:</p>
                             </td>
-                            <td class="ckyc__td" width="80%"></td>
+                            <td class="ckyc__td" width="80%">
+                                <p class="ckyc__p">{{body.bankNameAddress}}</p>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -554,6 +637,575 @@
                 <!-- Split -->
             </div>
             <!-- Page 2 -->
+            <div class="page">
+                <p class="ckyc__p mb-2">
+                    <strong>हालको ठेगाना (Current Address)</strong>
+                </p>
+                <table class="ckyc__table">
+                    <tbody>
+                        <!-- Country + Province  + District-->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td" width="10%">
+                                <p class="ckyc__p">देश:</p>
+                                <p class="ckyc__p">Country:</p>
+                            </td>
+                            <td class="ckyc__td" width="20%">
+                                <p class="ckyc__p">{{body.country}}</p>
+                            </td>
+                            <td class="ckyc__td" width="10%">
+                                <p class="ckyc__p">प्रदेश:</p>
+                                <p class="ckyc__p">Province:</p>
+                            </td>
+                            <td class="ckyc__td" width="20%">
+                                <p class="ckyc__p">{{body.province_}}</p>
+                            </td>
+                            <td class="ckyc__td" width="10%">
+                                <p class="ckyc__p">जिल्ला:</p>
+                                <p class="ckyc__p">District:</p>
+                            </td>
+                            <td class="ckyc__td" width="20%">
+                                <p class="ckyc__p">{{body.district_}}</p>
+                            </td>
+                        </tr>
+                        <!-- Municipality + Ward No -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">
+                                    गा.पा. / न.पा. / उ.म.न.पा. / म.न.पा.:
+                                </p>
+                                <p class="ckyc__p">
+                                    Rural Municipality/ Municipality/ Sub
+                                    Metropolitan City/ Metropolitan City:
+                                </p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.municipality_}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">वडा नं.:</p>
+                                <p class="ckyc__p">Ward No.:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.wardNo_}}</p>
+                            </td>
+                        </tr>
+                        <!-- Tole + Telephone No -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">टोल:</p>
+                                <p class="ckyc__p">Tole:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.tole_}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">टेलिफोन न.:</p>
+                                <p class="ckyc__p">Telephone No.:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.telephoneNo_}}</p>
+                            </td>
+                        </tr>
+                        <!-- Email ID + Website -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">ईमेल:</p>
+                                <p class="ckyc__p">Email ID:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.emailID_}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">वेबसाईट:</p>
+                                <p class="ckyc__p">Website:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.website_}}</p>
+                            </td>
+                        </tr>
+                        <!-- Registration Address + Country -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">
+                                    कम्पनी दर्ता हुँदाको ठेगाना:
+                                </p>
+                                <p class="ckyc__p">
+                                    Address of Company at the time of
+                                    Registration:
+                                </p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">
+                                    {{body.registerationAddress}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">देश:</p>
+                                <p class="ckyc__p">Country:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.country}}</p>
+                            </td>
+                        </tr>
+                        <!-- Registration Province + District -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">प्रदेश:</p>
+                                <p class="ckyc__p">Province:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.province}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">जिल्ला:</p>
+                                <p class="ckyc__p">District:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.district}}</p>
+                            </td>
+                        </tr>
+                        <tr class="ckyc__tr">
+                            <!-- Registration Municipality + Tole -->
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">
+                                    गा.पा. / न.पा. / उ.म.न.पा. / म.न.पा.:
+                                </p>
+                                <p class="ckyc__p">
+                                    Rural Municipality/ Municipality/ Sub
+                                    Metropolitan City/ Metropolitan City:
+                                </p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.municipality}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">टोल:</p>
+                                <p class="ckyc__p">Tole:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.tole}}</p>
+                            </td>
+                        </tr>
+                        <tr class="ckyc__tr">
+                            <!-- Registration Telephone No + Ward No + Block No -->
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">टेलिफोन न.:</p>
+                                <p class="ckyc__p">Telephone No.:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.telephone}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">वडा नं.:</p>
+                                <p class="ckyc__p">Ward No.:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.wardNo}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">ब्लक नं.:</p>
+                                <p class="ckyc__p">Block No.:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{body.blockNo}}</p>
+                            </td>
+                        </tr>
+                        <!-- Registration Email ID + Website -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">ईमेल:</p>
+                                <p class="ckyc__p">E-Mail ID:</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.email}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">वेबसाईट:</p>
+                                <p class="ckyc__p">Website</p>
+                            </td>
+                            <td class="ckyc__td" colspan="2">
+                                <p class="ckyc__p">{{body.website}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Spacer -->
+                <!-- Details of Directors -->
+                <p class="ckyc__p mt-4">
+                    <strong
+                        >संचालक, कार्यकारी प्रमुखहरुको विवरण / Details of
+                        Directors, CEO</strong
+                    >
+                </p>
+                <table class="ckyc__table mt-1">
+                    <thead>
+                        <tr class="ckyc__tr">
+                            <th class="ckyc__td" width="1%">
+                                <p class="ckyc__p">क्र.सं.</p>
+                                <p class="ckyc__p">S.N.</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">नाम, थर</p>
+                                <p class="ckyc__p">Name/ Surname</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">पद</p>
+                                <p class="ckyc__p">Designation</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">पति/ पत्नीको नाम</p>
+                                <p class="ckyc__p">Spouse’s Name</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">बाबुको नाम</p>
+                                <p class="ckyc__p">Father’s Name</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">बजेको नाम</p>
+                                <p class="ckyc__p">Grand Father’s Name</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">स्थायी ठेगाना</p>
+                                <p class="ckyc__p">Permanent Address</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">हालको ठेगाना</p>
+                                <p class="ckyc__p">Current Address</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">टेलिफोन नं.</p>
+                                <p class="ckyc__p">Telephone No.</p>
+                            </th>
+                            <th class="ckyc__td" width="9%">
+                                <p class="ckyc__p">मोबाइल नं.</p>
+                                <p class="ckyc__p">Mobile No.</p>
+                            </th>
+                            <th class="ckyc__td" width="18%">
+                                <p class="ckyc__p">ईमेल ठेगाना</p>
+                                <p class="ckyc__p">E-mail ID</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Für each Directors => Director -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">{{index}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Spacer -->
+                <!-- First + Second Contact Person -->
+                <table class="ckyc__table mt-3">
+                    <thead>
+                        <tr class="ckyc__tr">
+                            <th class="ckyc__td" width="20%"></th>
+                            <th class="ckyc__td" width="40%">
+                                <p class="ckyc__p">पहिलो सम्पर्क व्यक्ति:</p>
+                                <p class="ckyc__p">First Contact Person:</p>
+                            </th>
+                            <th class="ckyc__td" width="40%">
+                                <p class="ckyc__p">दोस्रो सम्पर्क व्यक्ति:</p>
+                                <p class="ckyc__p">Second Contact Person:</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Name -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">नाम:</p>
+                                <p class="ckyc__p">Name:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonName}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonName}}
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Father's Name -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">बाबुको नाम:</p>
+                                <p class="ckyc__p">Father's Name:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonFatherName}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonFatherName}}
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Grand Father's Name -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">बाजेको नाम:</p>
+                                <p class="ckyc__p">Grand Father's Name</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonGrandFatherName}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonGrandFatherName}}
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Designation -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">पद:</p>
+                                <p class="ckyc__p">Designation:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonDesignation}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonDesignation}}
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Signature -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">हस्ताक्षर:</p>
+                                <p class="ckyc__p">Signature:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonSignature}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonSignature}}
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Photo -->
+                        <tr class="ckyc__tr">
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">फोटो:</p>
+                                <p class="ckyc__p">Photo:</p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{firstContactPersonPhoto}}
+                                </p>
+                            </td>
+                            <td class="ckyc__td">
+                                <p class="ckyc__p">
+                                    {{secondContactPersonPhoto}}
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Page 3 -->
+            <div class="page">
+                <table class="ckyc__table">
+                    <tr class="ckyc__tr">
+                        <td class="ckyc__td" width="20%">
+                            <p class="ckyc__p text-center">
+                                <strong>कार्यालय रहेको स्थान को नक्शा</strong>
+                            </p>
+                            <p class="ckyc__p text-center">
+                                <strong>Location Map</strong>
+                            </p>
+                        </td>
+                        <td class="ckyc__td" width="80%">
+                            <div class="map">
+                                <p class="ckyc__p map__title">Site Map</p>
+                                <p class="ckyc__p map__pointer">N</p>
+                                <p class="map__img">Map Img</p>
+                                <p class="ckyc__p map__footer">
+                                    From main Road Street
+                                    <span class="ckyc__empty small"></span> the
+                                    distance of the Residence is
+                                    <span class="ckyc__empty small"></span>
+                                    meterd (approximately)
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="ckyc__p mt-4">
+                    <strong
+                        >धितोपत्र कारोवारको सम्बन्धमा तपशिल बमोजिमको स्वघोषणा
+                        गर्दछु।</strong
+                    >
+                </p>
+                <p class="ckyc__p mt-1">
+                    १. कम्पनी/संस्थाले धितोपत्र खरिदका लागि प्रयोग गर्ने रकम
+                    सम्पत्ती शुद्धिकरण सम्बन्धी प्रचलित कानुन विपरित आर्जन गरेको
+                    हुने छैन।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    २. कम्पनी/संस्था धितोपत्रमा गरिएको लगानीमा निहित जोखिमको
+                    सम्बन्धमा जानकारी छ।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    ३. कम्पनी/संस्थाले खरिद गरेका धितोपत्रहरु वापतको भुक्तानी
+                    लिने दिने कार्य तोकिएको समय भित्र गर्बे छ।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    ४. धितोपत्र सम्बन्धी तथा अन्य प्रचलित नियम कानूनहरुको पालना
+                    गरिने छ।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    ५. कम्पनी / संस्था कर्जा सूचना केन्द्रको कालो सूचीमा रहेको
+                    छैन।
+                </p>
+                <p class="ckyc__p mt-2">
+                    माथि उल्लेखित विवरण सत्य तथ्य रहेको र सो विवरणमा कुनै फरक
+                    परे कानून बमोजिम सहुँला, बुझाउँला। I/We hereby acknowledge
+                    that the above disclosed details are true. I further hereby
+                    consent to bear any legal actions in case any false
+                    disclosure of information related to me/us.
+                </p>
+                <p class="ckyc__p mt-3">
+                    <u><strong>संलग्न गर्नु पर्ने कागजात</strong></u>
+                </p>
+                <p class="ckyc__p mt-1">
+                    १. कम्पनी वा संस्था दर्ता प्रमाणपत्रको प्रतिलिपी।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    २. कम्पनी वा संस्थाको स्थायी लेख नं. प्रबन्धपत्र तथा
+                    नियमावलीको प्रतिलिपी।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    ३. धितोपत्र कारोबार गर्न ग्राहक परिचय विवरण भर्ने सम्बन्धमा
+                    संचालक समितिको निर्णय।
+                </p>
+
+                <p class="ckyc__p mt-1">
+                    ४. कुनै नियमनकरी निकायबाट अनुमतिपत्र प्राप्त गरेको भएमा सोको
+                    प्रतिलिपी।
+                </p>
+
+                <p class="ckyc__p mt-1">५. कर चुक्ता / दाखिला प्रमाणपत्र।</p>
+
+                <p class="ckyc__p mt-1">
+                    ६. अख्तियार प्राप्त व्कक्तिको फोटो तथा नागरिकता प्रमाणपत्रको
+                    प्रतिलिपी।
+                </p>
+                <div class="info__container">
+                    <p class="ckyc__p">
+                        आधिकारिक व्यक्तिको नाम: {{body.authorizedPersonNameNP}}
+                    </p>
+
+                    <p class="ckyc__p mt-2">
+                        Name of Authorized Person:
+                        {{body.authorizedPersonNameEN}}
+                    </p>
+
+                    <p class="ckyc__p mt-2">पद:</p>
+
+                    <p class="ckyc__p mt-2">
+                        Designation: {{body.Designation}}
+                    </p>
+
+                    <p class="ckyc__p mt-2">हस्ताक्षर:</p>
+
+                    <p class="ckyc__p mt-2">Signature: {{body.signature}}</p>
+
+                    <p class="ckyc__p mt-2">कम्पनी को छाप:</p>
+
+                    <p class="ckyc__p mt-2">Company’s Stamp: {{body.stamp}}</p>
+                </div>
+                <p class="ckyc__p mt-2">
+                    <u>
+                        <strong> कार्यालय प्रयोजनको लागि </strong>
+                    </u>
+                </p>
+                <table class="custom__table mt-1">
+                    <tr>
+                        <td width="40%">
+                            <p class="ckyc__p">
+                                <strong>रुजु गर्ने:</strong>
+                            </p>
+
+                            <p class="ckyc__p mt-2">नाम, थर:</p>
+
+                            <p class="ckyc__p mt-2">पद:</p>
+
+                            <p class="ckyc__p mt-2">हस्ताक्षर:</p>
+
+                            <p class="ckyc__p mt-2">मिति:</p>
+                        </td>
+                        <td width="20%" class="stamp_wrapper">
+                            <div class="stamp__box"></div>
+                            <p class="ckyc__p text-center">
+                                कार्यालयको नाम तथा छाप
+                            </p>
+                        </td>
+                        <td width="40%">
+                            <p class="ckyc__p">
+                                <strong>प्रमाणित गर्ने:</strong>
+                            </p>
+                            <p class="ckyc__p mt-2">नाम, थर:</p>
+
+                            <p class="ckyc__p mt-2">पद:</p>
+
+                            <p class="ckyc__p mt-2">हस्ताक्षर:</p>
+
+                            <p class="ckyc__p mt-2">मिति:</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </body>
 </html>
