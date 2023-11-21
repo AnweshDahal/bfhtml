@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+        />
+        <style>
+            * {
+                margin: 0px;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .mti {
+                max-width: 794px;
+                margin-inline: auto;
+                font-family: 'Noto Sans Devnagari', sans-serif;
+                font-size: 0.9rem;
+                letter-spacing: 0px;
+                text-align: justify;
+                padding: 2rem;
+            }
+
+            .mti__p {
+                font-size: 0.8rem !important;
+                line-height: 1rem;
+                text-align: left;
+                margin-bottom: 0rem;
+            }
+
+            .page {
+                max-width: 789px;
+                margin-inline: auto;
+                font-family: 'Noto Sans Devanagari', sans-serif;
+                font-kerning: none;
+                -webkit-font-smoothing: none;
+                -moz-osx-font-smoothing: none;
+                letter-spacing: 0px;
+                text-align: justify;
+                padding: 1rem;
+                margin: 2rem;
+                break-inside: avoid;
+                page-break-before: always;
+                border: 1px solid black;
+            }
+
+            @media print {
+                .page {
+                    page-break-before: always;
+                    break-inside: avoid;
+                }
+            }
+
+            .mti__header {
+                display: grid;
+                grid-template-columns: 6fr 4fr;
+            }
+
+            .mti__boid {
+                display: flex;
+                align-items: center;
+            }
+
+            .boid {
+                min-width: 13rem;
+                border: 1px solid black;
+                padding: 3px;
+            }
+
+            .sub__form {
+                border: 1px solid black;
+                padding: 1rem;
+            }
+
+            .metrics {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        </style>
+        <title>Minor to Individual</title>
+    </head>
+    <body>
+        <div class="mti">
+            <div class="page">
+                <div class="mti__header">
+                    <p class="mti__p">
+                        <strong>Minor to Individual Account</strong>
+                    </p>
+                    <p class="mti__p"><strong>Date</strong></p>
+                </div>
+                <p class="mti__p mt-3">Form No.:</p>
+                <div class="mti__boid mt-3">
+                    <p class="mti__p me-2">BOID:</p>
+                    <!-- Split BOID -->
+                    <div class="boid">1</div>
+                </div>
+                <p class="mti__p mt-3">Name: {{body.name}}</p>
+                <p class="mti__p mt-3">Father's Name: {{body.fatherName}}</p>
+                <p class="mti__p mt-3">Mother's Name: {{body.motherName}}</p>
+                <p class="mti__p mt-3">
+                    Grandfather's Name: {{body.grandfatherName}}
+                </p>
+                <p class="mti__p mt-3">DOB: {{body.dob}}</p>
+                <p class="mti__p mt-3">
+                    Citizenship No.: {{body.citizenshipNo}}
+                </p>
+                <p class="mti__p mt-3">Signature: {{body.signature}}</p>
+                <div class="sub__form mt-3">
+                    <p class="mti__p">To be filled by DP</p>
+                    <p class="mti__p mt-3">
+                        Sub-Status: Minor to <span class="mti__empty"></span>
+                    </p>
+                    <p class="mti__p mt-3">
+                        Signature Update: {{body.signatureUpdate}}
+                    </p>
+                    <p class="mti__p mt-3">
+                        Freeze ID: <span class="mti__empty"></span>
+                    </p>
+                    <p class="mti__p mt-3">
+                        Unfreeze date (to be done after NCN update from CDS):
+                    </p>
+                    <div class="metrics mt-3">
+                        <p class="mti__p">Signature: {{body.signature}}</p>
+                        <p class="mti__p">Date: Heute</p>
+                        <p class="mti__p">Stamp:</p>
+                    </div>
+                </div>
+                <div class="sub__form mt-3">
+                    <p class="mti__p">Approved by CDSC</p>
+                    <p class="mti__p mt-3">NCN Update:</p>
+                    <div class="metrics mt-3">
+                        <p class="mti__p">Signature:</p>
+                        <p class="mti__p">Date: Heute</p>
+                        <p class="mti__p">Stamp:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
